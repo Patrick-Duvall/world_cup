@@ -27,8 +27,8 @@ class TeamTest < Minitest::Test
 
   def test_can_add_players
     team = Team.new("France")
-    team.add_player(Player.new("Bob","goalie"))
-    team.add_player(Player.new("Lou", "midfielder"))
+    team.add_player(Player.new({name:"Bob" ,position: "goalie"}))
+    team.add_player(Player.new({name:"Lou" ,position: "midfielder"}))
     assert_equal 2, team.players.length
     assert team.players[0].name == "Bob"
     assert team.players[1].name == "Lou"
