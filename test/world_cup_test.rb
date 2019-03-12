@@ -37,6 +37,11 @@ class WorldCupTest < Minitest::Test
     assert_equal [@pogba], @world_cup.active_players_by_position("midfielder")
   end
 
+  def test_all_players_by_position
+    binding.pry
+    assert_equal ({"forward" => [@mbappe], "midfielder" => [@pogba, @modric], "defender" => [@vida]}) , @world_cup.all_players_by_position
+  end
+
 
 
 end

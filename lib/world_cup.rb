@@ -15,6 +15,18 @@ class WorldCup
     players_by_position(position) - eliminated_players
   end
 
+  def all_players_by_position
+    players = Hash.new
+    team_players = @teams.map(&:players).flatten
+    team_players.each do |player|
+       if !players[player.position]
+          players[player.position] = [player]
+        else
+          players[player.position] << player
+        end
+    end
+    players
+  end
 
 
 end
